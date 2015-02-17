@@ -1,0 +1,49 @@
+{
+    "name": "andylibrian/omnipay-veritrans",
+    "type": "library",
+    "description": "Veritrans driver for the Omnipay PHP payment processing library",
+    "keywords": [
+        "gateway",
+        "merchant",
+        "omnipay",
+        "pay",
+        "payment",
+        "purchase",
+        "veritrans"
+    ],
+    "homepage": "https://github.com/andylibrian/omnipay-veritrans",
+    "authors": [
+        {
+            "name": "Andy Librian",
+            "email": "andylibrian@gmail.com",
+            "homepage": "http://andylibrian.pro",
+            "role": "Lead Developer"
+        },
+        {
+            "name": "Contributors",
+            "homepage": "https://github.com/andylibrian/omnipay-veritrans/contributors"
+        }
+    ],
+    "require": {
+        "omnipay/common": "~2.0"
+    },
+    "require-dev": {
+        "squizlabs/php_codesniffer": "~1.4",
+        "omnipay/tests": "~2.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Omnipay\\Veritrans\\": "src/"
+        }
+    },
+    "license": "MIT",
+    "support": {
+        "issues": "https://github.com/andylibrian/omnipay-veritrans/issues",
+        "source": "https://github.com/andylibrian/omnipay-veritrans"
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "0.1.x-dev"
+        }
+    }
+}

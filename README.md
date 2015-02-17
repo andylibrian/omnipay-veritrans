@@ -5,7 +5,7 @@
 [Omnipay](https://github.com/thephpleague/omnipay) is a framework agnostic, multi-gateway payment
 processing library for PHP 5.3+. This package implements Veritrans support for Omnipay.
 
-*This is a third party package maintained by me and community.
+*This is a third party package maintained by [the author](https://github.com/andylibrian) and community.
 If you want to use Veritrans Payment API without Omnipay, we suggest you check out The official [PHP wrapper for Veritrans Payment API](https://github.com/veritrans/veritrans-php).*
 
 ## Installation
