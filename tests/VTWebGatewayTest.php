@@ -44,4 +44,12 @@ class VTWebGatewayTest extends \PHPUnit_Framework_TestCase
             $this->gateway->authorize()
         );
     }
+
+    public function testPurchase()
+    {
+        $this->assertInstanceOf(
+            'Omnipay\Veritrans\Message\VTWeb\TransactionChargeRequest',
+            $this->gateway->purchase()
+        );
+    }
 }

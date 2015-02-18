@@ -22,10 +22,51 @@ Omnipay is installed via [Composer](http://getcomposer.org/). To install, simply
 
 ## Basic Usage
 
-TBD
+The following gateways are provided by this package:
+
+- VT-Web
+
+
+```php
+<?php
+
+require_once __DIR__ . '/vendor/autoload.php';
+
+use Omnipay\Omnipay;
+use Omnipay\Common\CreditCard;
+
+$gateway = Omnipay::create('Veritrans_VTWeb');
+$gateway->setServerKey('server-key-replace-with-yours');
+$gateway->setEnvironment('sandbox'); // [production|sandbox] default to production
+
+$data = array(
+    'transactionId' => '123456',
+    'amount'        => '145000.00',
+    'card'          => new CreditCard(),
+    'vtwebConfiguration' => array(
+        'credit_card_3d_secure' => true,
+    ),  
+    'currency'      => 'IDR',
+);
+
+$response = $gateway->purchase($data)->send();
+
+if ($response->isSuccessful()) {
+    // payment success, update database
+    // using VT-Web, you will always get redirected to offsite (veritrans page)
+    // so here won't be reached.
+} elseif ($response->isRedirect()) {
+    // redirect to offsite payment gateway
+    $response->redirect();
+} else {
+    echo $response->getMessage();
+}
+```
+
 
 For general usage instructions, please see the main [Omnipay](https://github.com/thephpleague/omnipay)
 repository.
+And for more information about Veritrans features, please see [Veritrans Documentation](http://docs.veritrans.co.id/welcome/welcome.html)
 
 ## Support
 

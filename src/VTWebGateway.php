@@ -43,4 +43,9 @@ class VTWebGateway extends AbstractGateway
     {
         return $this->createRequest('\Omnipay\Veritrans\Message\VTWeb\TransactionChargeRequest', $parameters);
     }
+
+    public function purchase(array $parameters = array())
+    {
+        return $this->createRequest('\Omnipay\Veritrans\Message\VTWeb\TransactionChargeRequest', $parameters);
+    }
 }
