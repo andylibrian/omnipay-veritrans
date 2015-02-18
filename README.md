@@ -1,5 +1,10 @@
 # Omnipay: Veritrans
 
+[![Build Status](https://travis-ci.org/andylibrian/omnipay-veritrans.svg)](https://travis-ci.org/andylibrian/omnipay-veritrans)
+[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/andylibrian/omnipay-veritrans/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/andylibrian/omnipay-veritrans/?branch=master)
+[![Code Coverage](https://scrutinizer-ci.com/g/andylibrian/omnipay-veritrans/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/andylibrian/omnipay-veritrans/?branch=master)
+[![Latest Stable Version](https://poser.pugx.org/andylibrian/omnipay-veritrans/v/stable.svg)](https://packagist.org/packages/andylibrian/omnipay-veritrans)
+
 **[Veritrans](https://www.veritrans.co.id/) driver for the Omnipay PHP payment processing library**
 
 [Omnipay](https://github.com/thephpleague/omnipay) is a framework agnostic, multi-gateway payment
