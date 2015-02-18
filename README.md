@@ -17,7 +17,7 @@ If you want to use Veritrans Payment API without Omnipay, we suggest you check o
 
 Omnipay is installed via [Composer](http://getcomposer.org/). To install, simply run:
 
-    $ php composer.phar require andylibrian/omnipay-veritrans:dev-master
+    $ php composer.phar require andylibrian/omnipay-veritrans
 
 
 ## Basic Usage
