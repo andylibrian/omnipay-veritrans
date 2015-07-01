@@ -1,0 +1,73 @@
+<html>
+  <head>
+    <title>VT-Direct Form Example</title>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script type="text/javascript">
+$(function(){
+  
+  updateInput1();
+
+  $('#card-number').keyup(function(){
+    updateInput1();
+  });
+
+  $('#input3').val(random5digit());
+
+  function updateInput1(){
+    var ccNumber = $('#card-number').val();
+    if(ccNumber.length > 9) {
+      $('#input1').val(ccNumber.substring(ccNumber.length, ccNumber.length-10));
+    }
+  }
+
+  function paddy(n, p, c) {
+    var pad_char = typeof c !== 'undefined' ? c : '0';
+    var pad = new Array(1 + p).join(pad_char);
+    return (pad + n).slice(-pad.length);
+  }
+
+  function random5digit(){
+    return paddy(Math.floor(Math.random() * 99999), 5); 
+  }
+
+});
+</script>
+  </head>
+<body>
+    <h1>Mandiri Clickpay Transaction</h1>
+    <ol>
+      <li>Activate your Mandiri Token</li>
+      <li>Insert Mandiri Token password</li>
+      <li>Click 3 when Mandiri Token displays APPLI.</li>
+      <li>Fill "Input 1": Last 10 digit of your Mandiri Debit card</li>
+      <li>Fill "Input 2": Transaction Value</li>
+      <li>Fill "Input 3": Request Number</li>
+      <li>Fill your Mandiri Token response into “Challenge Token”</li>
+    </ll>
+
+    <hr />
+    <form action="checkout_mandiri.php" method="POST" id="payment-form">
+      <label>Card Number</label>
+      <input id="card-number" name="card-number" size="20" type="text" value="4111111111111111"/>
+      <br />
+      
+      <label>Input 1</label>
+      <input id="input1" name="input1" size="10" type="text" readonly="readonly"/>
+      <br />
+
+      <label>Input 2</label>
+      <input id="input2" name="input2" size="20" type="text" value="200500" readonly="readonly"/>
+      <br />
+
+      <label>Input 3</label>
+      <input id="input3" name="input3" size="5" type="text" readonly="readonly"/>
+      <br />
+
+      <label>Challenge Token</label>
+      <input id="token" name="token" size="10" type="text" value="000000"/>
+      <br />
+
+      <button id="submit-button" type="submit">Pay</button>
+    </form>
+  </body>
+</html>

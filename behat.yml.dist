@@ -1,0 +1,12 @@
+default:
+    suites:
+        javascript:
+            contexts:
+                - FeatureContext
+            filters:
+                tags: "@javascript"
+    extensions:
+        Behat\MinkExtension\ServiceContainer\MinkExtension:
+            base_url: http://localhost/sites/omnipay-veritrans/demo
+            selenium2: ~
+            browser_name: firefox

@@ -29,7 +29,12 @@
     },
     "require-dev": {
         "squizlabs/php_codesniffer": "~1.4",
-        "omnipay/tests": "~2.0"
+        "omnipay/tests": "~2.0",
+        "behat/behat": "~3.0",
+        "behat/mink": "~1.6",
+        "behat/mink-extension": "~2.0",
+        "behat/mink-goutte-driver": "~1.1",
+        "behat/mink-selenium2-driver": "~1.2"
     },
     "autoload": {
         "psr-4": {
