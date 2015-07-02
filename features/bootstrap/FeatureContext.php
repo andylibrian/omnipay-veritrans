@@ -32,6 +32,14 @@ class FeatureContext extends MinkContext implements Context, SnippetAcceptingCon
     }
 
     /**
+     * @Given I am on Mandiri Clickpay Checkout Form
+     */
+    public function iAmOnMandiriClickpayCheckoutForm()
+    {
+        $this->visitPath('/mandiri_clickpay/form.html');
+    }
+
+    /**
      * @Given I pay
      */
     public function iPay()

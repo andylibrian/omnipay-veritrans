@@ -1,5 +1,10 @@
 default:
     suites:
+        default:
+            contexts:
+                - FeatureContext
+            filters:
+                tags: "~@javascript"
         javascript:
             contexts:
                 - FeatureContext
@@ -7,6 +12,11 @@ default:
                 tags: "@javascript"
     extensions:
         Behat\MinkExtension\ServiceContainer\MinkExtension:
+            sessions:
+                default:
+                    goutte: ~
+                javascript:
+                    selenium2: ~
             base_url: http://localhost/sites/omnipay-veritrans/demo
             selenium2: ~
             browser_name: firefox

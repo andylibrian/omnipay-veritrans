@@ -1,8 +1,9 @@
 /build
 /vendor
-composer.lock
-composer.phar
-phpunit.xml
-phpunit.phar
-php-cs-fixer.phar
-cache.properties
+/composer.lock
+/composer.phar
+/phpunit.xml
+/phpunit.phar
+/php-cs-fixer.phar
+/cache.properties
+/behat.yml

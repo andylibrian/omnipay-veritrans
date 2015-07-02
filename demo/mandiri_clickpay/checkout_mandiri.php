@@ -1,6 +1,6 @@
 <?php
 
-require_once __DIR__ . '/../vendor/autoload.php';
+require_once __DIR__ . '/../../vendor/autoload.php';
 
 use Omnipay\Omnipay;
 use Omnipay\Common\CreditCard;
@@ -29,14 +29,10 @@ $response = $gateway->authorize($data)->send();
 
 if ($response->isSuccessful()) {
     // payment success, update database
-    var_dump($successful);
-    var_dump($response);
+    echo 'Transaksi Sukses';
 } elseif ($response->isRedirect()) {
     // redirect to offsite payment gateway
     $response->redirect();
 } else {
-    var_dump('else');
     echo $response->getMessage();
 }
-
-var_dump('x');

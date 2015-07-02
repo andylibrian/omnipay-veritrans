@@ -1,37 +1,6 @@
 <html>
   <head>
     <title>VT-Direct Form Example</title>
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-    <script type="text/javascript">
-$(function(){
-  
-  updateInput1();
-
-  $('#card-number').keyup(function(){
-    updateInput1();
-  });
-
-  $('#input3').val(random5digit());
-
-  function updateInput1(){
-    var ccNumber = $('#card-number').val();
-    if(ccNumber.length > 9) {
-      $('#input1').val(ccNumber.substring(ccNumber.length, ccNumber.length-10));
-    }
-  }
-
-  function paddy(n, p, c) {
-    var pad_char = typeof c !== 'undefined' ? c : '0';
-    var pad = new Array(1 + p).join(pad_char);
-    return (pad + n).slice(-pad.length);
-  }
-
-  function random5digit(){
-    return paddy(Math.floor(Math.random() * 99999), 5); 
-  }
-
-});
-</script>
   </head>
 <body>
     <h1>Mandiri Clickpay Transaction</h1>
@@ -52,7 +21,7 @@ $(function(){
       <br />
       
       <label>Input 1</label>
-      <input id="input1" name="input1" size="10" type="text" readonly="readonly"/>
+      <input id="input1" name="input1" size="10" type="text" readonly="readonly" value="1111111111"/>
       <br />
 
       <label>Input 2</label>
@@ -60,14 +29,14 @@ $(function(){
       <br />
 
       <label>Input 3</label>
-      <input id="input3" name="input3" size="5" type="text" readonly="readonly"/>
+      <input id="input3" name="input3" size="5" type="text" readonly="readonly" value="79176"/>
       <br />
 
       <label>Challenge Token</label>
       <input id="token" name="token" size="10" type="text" value="000000"/>
       <br />
 
-      <button id="submit-button" type="submit">Pay</button>
+      <button id="btn-pay" type="submit">Pay</button>
     </form>
   </body>
 </html>
