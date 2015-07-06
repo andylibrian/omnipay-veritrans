@@ -49,6 +49,7 @@ class FeatureContext extends MinkContext implements Context, SnippetAcceptingCon
 
     /**
      * @Then I should be redirected to Veritrans Cimb Clicks Page
+     * @Then I should be redirected to Veritrans BRI Epay Page
      */
     public function iShouldBeRedirectedToVeritransCimbClicksPage()
     {
@@ -94,6 +95,24 @@ class FeatureContext extends MinkContext implements Context, SnippetAcceptingCon
     public function iProceedWithSuccessCimbAccountid()
     {
         $this->fillField('account', 'testuser00');
+        $button = $this->getSession()->getPage()->find('css', 'form[action=payment] button[type=submit]');
+        $button->press();
+    }
+
+    /**
+     * @Given I am on BRI Epay Checkout Form
+     */
+    public function iAmOnBriEpayCheckoutForm()
+    {
+        $this->visitPath('/bri_epay/form.html');
+    }
+
+    /**
+     * @Then I proceed with success BRI Epay accountID
+     */
+    public function iProceedWithSuccessBRIEpayAccountid()
+    {
+        $this->fillField('username', 'testuser00');
         $button = $this->getSession()->getPage()->find('css', 'form[action=payment] button[type=submit]');
         $button->press();
     }

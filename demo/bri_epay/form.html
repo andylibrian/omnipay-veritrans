@@ -1,0 +1,47 @@
+<html>
+  <head>
+    <title>VT-Direct Form Example</title>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script type="text/javascript">
+$(function(){
+  
+  updateInput1();
+
+  $('#card-number').keyup(function(){
+    updateInput1();
+  });
+
+  $('#input3').val(random5digit());
+
+  function updateInput1(){
+    var ccNumber = $('#card-number').val();
+    if(ccNumber.length > 9) {
+      $('#input1').val(ccNumber.substring(ccNumber.length, ccNumber.length-10));
+    }
+  }
+
+  function paddy(n, p, c) {
+    var pad_char = typeof c !== 'undefined' ? c : '0';
+    var pad = new Array(1 + p).join(pad_char);
+    return (pad + n).slice(-pad.length);
+  }
+
+  function random5digit(){
+    return paddy(Math.floor(Math.random() * 99999), 5); 
+  }
+
+});
+</script>
+  </head>
+<body>
+    <h1>BRI ePay Transaction</h1>
+    <hr />
+    <form action="checkout_bri_epay.php" method="POST" id="payment-form">
+      <label>Amount</label>
+      <input id="amount" name="amount" size="10" type="text" value="100000"/>
+      <br />
+
+      <button id="btn-pay" type="submit">Pay</button>
+    </form>
+  </body>
+</html>
