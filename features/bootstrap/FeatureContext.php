@@ -116,4 +116,12 @@ class FeatureContext extends MinkContext implements Context, SnippetAcceptingCon
         $button = $this->getSession()->getPage()->find('css', 'form[action=payment] button[type=submit]');
         $button->press();
     }
+
+    /**
+     * @Given I am on TCash Checkout Form
+     */
+    public function iAmOnTcashCheckoutForm()
+    {
+        $this->visitPath('/tcash/form.html');
+    }
 }
